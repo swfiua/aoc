@@ -2,6 +2,7 @@
 from collections import Counter
 
 valid = 0
+valid2 = 0
 
 for row in open('two.csv').read().split('\n'):
     fields = row.split()
@@ -16,6 +17,9 @@ for row in open('two.csv').read().split('\n'):
 
     counts = Counter(password)
 
+    if password[minn] == char and password[maxx] != char:
+        valid += 1
+
     if minn > 0 and char not in counts:
         print(minn, maxx, char, password, '***')
         continue
@@ -26,4 +30,4 @@ for row in open('two.csv').read().split('\n'):
         print(minn, maxx, count, char, password)
         valid += 1
 
-print(valid)
+print(valid, valid2)
