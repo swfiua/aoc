@@ -9,13 +9,17 @@ row, col = 0, 0
 hits = 0
 
 while row < rows:
-    if data[row][col] = '#':
-        hits += 1
+
+    # ignore blank lines
+    if maze[row]:
+    
+        if maze[row][col] == '#':
+            hits += 1
 
     row += 1
     col += 3
     if col >= cols:
         col -= cols
 
-print(hits)[
+print(hits)
     
